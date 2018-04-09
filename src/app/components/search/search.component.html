@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6">
+    <label for="">Buscar</label>
+    <input class="form-control" (keyup)="searchArtist()" placeholder="Buscar" type="text" [(ngModel)]="term">
+  </div>
+  <div class="col-md-6">
+    <h1>Término: {{term}}</h1>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12" *ngFor="let artist of _spotify.artists" [routerLink]="['/artist',artist.id]">
+        <img [src]="artist.images | noimage" class="img-thumbnail img-responsive col-sm-4" alt="">
+        <p>{{artist.name}}</p>
+      </div>
+    </div>
+    <ul>
+    </ul>
+  </div>
+</div>
